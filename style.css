@@ -1,0 +1,331 @@
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #e3e9fa 0%, #f7d6ea 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+    .menu {
+      position: fixed;
+      background: rgba(255,255,255,0.25);
+      border-radius: 22px;
+      padding: 22px 16px 12px 16px;
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.15);
+      width: 330px;
+      z-index: 100;
+      display: none;
+      backdrop-filter: blur(10px);
+      max-height: 60vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      left: 50%;
+
+	  
+      transform: translateX(-50%);
+      transition: opacity 0.1s;
+    }
+    .menu .search-box {
+      display: flex;
+      align-items: center;
+      background: rgba(245,245,255,0.7);
+      border-radius: 13px;
+      padding: 8px 13px;
+      margin-bottom: 18px;
+      box-shadow: 0 1px 6px 0 rgba(31,38,135,0.03);
+      position: sticky;
+      top: 0;
+      background-clip: padding-box;
+      z-index: 2;
+    }
+    .menu .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      font-size: 1.06rem;
+      margin-left: 7px;
+      padding: 4px 0;
+    }
+    .menu label {
+      color: #a3a7be;
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 8px;
+      display: block;
+      margin-bottom: 6px;
+      margin-left: 4px;
+    }
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px 7px;
+    }
+    .icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 13px;
+      color: #444;
+      text-align: center;
+      gap: 3px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.12s;
+      border-radius: 11px;
+      padding: 4px 0;
+    }
+    .icon:active {
+      background: #e3e9fa;
+    }
+    .icon img {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 2px;
+      box-shadow: 0 2px 6px rgba(80,100,255,0.08);
+      border-radius: 8px;
+      background: #fff8;
+      padding: 4px;
+      pointer-events: none;
+    }
+    .desktop-icons {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100vw;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(86px, 1fr));
+      grid-auto-rows: 95px;
+      gap: 20px 10px;
+      padding: 0 10px;
+      max-height: calc(100vh - 160px);
+      overflow-y: auto;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+    .desktop-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
+      cursor: pointer;
+      margin-bottom: 8px;
+      border-radius: 12px;
+      transition: background 0.12s;
+      padding: 2px 0 0 0;
+    }
+    .desktop-icon:active {
+      background: #e3e9fa;
+    }
+    .desktop-icon .icon-bg {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #eaf0fc 70%, #f4e1f1 100%);
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(31,38,135,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 7px;
+      transition: box-shadow .2s;
+      border: 1px solid #f7f8fd;
+    }
+    .desktop-icon img {
+      width: 28px;
+      height: 28px;
+      filter: drop-shadow(0 4px 16px #c5d7fe22);
+      pointer-events: none;
+    }
+    .desktop-icon span {
+      font-size: 0.93rem;
+      font-weight: 500;
+      color: #444;
+      text-align: center;
+      margin-top: 2px;
+      pointer-events: none;
+      word-break: break-word;
+      width: 88%;
+      line-height: 1.2;
+    }
+    .dock {
+      position: fixed;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.25);
+      border-radius: 100px;
+      display: flex;
+      gap: 18px;
+      padding: 13px 24px 13px 24px;
+      z-index: 30;
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      min-height: 60px;
+      width: auto;
+      min-width: 0;
+      max-width: 96vw;
+      overflow-x: auto;
+    }
+	    .dock1 {
+      position: fixed;
+      bottom: 0px;
+      background: rgba(255,255,255,0.25);
+      box-shadow: 0 -2px 28px 0 rgba(31,38,135,0.10);
+      z-index: 0;
+      min-height: 60px;
+      width: 100%;
+    }
+    .dock img {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 1px 6px 0 rgba(80,100,255,0.07);
+      background: #fff;
+      transition: transform 0.2s cubic-bezier(.2,1.9,.32,1), box-shadow 0.2s;
+      margin: 0 4px;
+    }
+    .dock img:hover {
+      transform: scale(1.17);
+      box-shadow: 0 2px 16px #c5d7fe44;
+    }
+    .clock-bar {
+      position: fixed;
+      right: 16px;
+      bottom: 20px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 99;
+      color: #444c66;
+      font-weight: 500;
+      font-size: 1.04rem;
+      letter-spacing: 0.02em;
+    }
+    .clock-bar .wifi {
+      font-size: 1.4em;
+      margin-right: 4px;
+      opacity: 0.7;
+    }
+    .menu::-webkit-scrollbar, .desktop-icons::-webkit-scrollbar {
+      width: 6px;
+      background: #ececec77;
+      border-radius: 7px;
+    }
+    .menu::-webkit-scrollbar-thumb, .desktop-icons::-webkit-scrollbar-thumb {
+      background: #d2d2ea;
+      border-radius: 7px;
+    }
+    .menu, .desktop-icons {
+      scrollbar-width: thin;
+      scrollbar-color: #d2d2ea #ececec77;
+    }
+    .popup-window {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      min-width: 270px;
+      background: rgba(255,255,255,0.97);
+      border-radius: 18px;
+      box-shadow: 0 12px 56px 0 rgba(68, 80, 120, 0.17);
+      z-index: 9999;
+      padding: 0 0 20px 0;
+      animation: popupShow 0.23s cubic-bezier(.2,1.4,.32,1);
+      display: none;
+      max-width: 96vw;
+      max-height: 80vh;
+      overflow: auto;
+    }
+    @keyframes popupShow {
+      from { 
+        opacity: 0; 
+        transform: translate(-50%,-50%) scale(0.8);
+      }
+      to { 
+        opacity: 1; 
+        transform: translate(-50%,-50%) scale(1);
+      }
+    }
+    .popup-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(120deg, #eaf0fc 70%, #f4e1f1 100%);
+      border-radius: 18px 18px 0 0;
+      padding: 16px 17px 12px 14px;
+      font-size: 1.09rem;
+      font-weight: 600;
+      color: #425;
+      border-bottom: 1px solid #eee;
+    }
+    .popup-header img {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: #fff;
+      padding: 2px;
+      box-shadow: 0 2px 8px #c5d7fe44;
+    }
+    .popup-close {
+      margin-left: auto;
+      color: #999;
+      font-size: 1.5em;
+      cursor: pointer;
+      margin-right: 2px;
+      line-height: 1;
+      user-select: none;
+      transition: color 0.18s;
+    }
+    .popup-close:hover {
+      color: #d23;
+    }
+    .popup-content {
+      padding: 16px 20px 0 20px;
+      color: #444;
+      font-size: 1.01rem;
+      min-height: 65px;
+      word-break: break-word;
+    }
+    @media (max-width: 700px) {
+  .menu { 
+    width: 90vw !important; /* تقليل العرض قليلاً */
+    max-width: 90vw !important;
+    left: 50% !important; /* توسيط القائمة */
+    transform: translateX(-50%) !important; /* توسيط القائمة */
+    bottom: 100px !important;
+    top: auto !important;
+    max-height: 70vh;
+    margin-bottom: 10px;
+  }
+      .desktop-icons { 
+        padding: 0 2vw; 
+        gap: 10px 2vw;
+      }
+      .icon-grid { 
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .dock { 
+        left: 50%; 
+        transform: translateX(-50%); 
+        max-width: 99vw; 
+      }
+      .popup-window { 
+        width: 92vw;
+        min-width: auto;
+		
+        left: 4vw !important;
+        transform: translateY(-50%) !important;
+      }
+    }
+    @media (max-width: 350px) {
+      .icon-grid { 
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .popup-window { 
+        min-width: 96vw;
+      }
+    }

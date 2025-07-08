@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Desktop UI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link src='style.css'>
+  
+<link rel="stylesheet" type="text/css" href="style.css">
+  
+</head>
+<body>
+  <!-- القائمة الجانبية -->
+  <div class="menu" id="startMenu">
+    <div class="search-box">
+      <svg width="18" height="18" fill="#aaa" viewBox="0 0 20 20">
+        <path d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.387a1 1 0 01-1.414 1.414l-4.387-4.387zm-5.9-1.324a6 6 0 100-12 6 6 0 000 12z"></path>
+      </svg>
+      <input type="text" placeholder="Search" id="searchInput" autocomplete="off" />
+    </div>
+    <label>Office</label>
+    <div class="icon-grid" id="officeGrid" style="margin-bottom:8px;">
+      <div class="icon" 
+     data-title="Word" 
+     data-content="<div class='app-info'><h3>Microsoft Word</h3><p>معالج النصوص الأكثر شهرة</p><ul><li>إنشاء وتحرير المستندات</li><li>تنسيق النصوص بسهولة</li><li>مشاركة الملفات مع الآخرين</li></ul></div>"
+     data-width="450"
+     data-height="400">
+  <img src="https://img.icons8.com/color/48/000000/ms-word.png"/>
+  <span>Word</span>
+</div>
+
+    </div>
+  </div>
+
+  <!-- أيقونات سطح المكتب -->
+  <div class="desktop-icons" id="desktopIcons">
+    <div class="desktop-icon" 
+     data-title="Edge Browser" 
+     data-content="متصفح Microsoft Edge الجديد.<br><br>المميزات:<br>- تصفح سريع وآمن<br>- دعم كامل للمعايير الحديثة<br>- تزامن مع حساب Microsoft"
+     data-width="400"
+     data-height="300">
+  <div class="icon-bg">
+    <img src="https://img.icons8.com/color/96/000000/ms-edge-new.png"/>
+  </div>
+  <span>Edge Browser</span>
+</div>
+
+  </div>
+
+  <!-- نافذة التبويب (popup) -->
+  <div class="popup-window" id="popupWindow">
+    <div class="popup-header">
+      <img id="popupIcon" src="" alt="">
+      <span id="popupTitle"></span>
+      <span class="popup-close" id="popupClose">&times;</span>
+    </div>
+    <div class="popup-content" id="popupContent"></div>
+  </div>
+
+  <!-- شريط التطبيقات -->
+  <div class="dock" id="mainDock">
+    <img src="https://img.icons8.com/color/48/000000/chrome--v1.png"/>
+    <img src="https://img.icons8.com/color/48/000000/folder-invoices.png"/>
+    <img src="https://img.icons8.com/color/48/000000/settings.png" id="settingsIcon"/>
+    <img src="https://img.icons8.com/color/48/000000/windows-10-personalization.png"/>
+    <img src="https://img.icons8.com/color/48/000000/app-store.png"/>
+  </div>
+  <div class="dock1" id="mainDock">
+  
+  </div>
+  <div class="clock-bar">
+    <span id="clock">10:23</span>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+</html>
